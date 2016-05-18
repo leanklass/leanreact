@@ -40,12 +40,12 @@
 
 本章会带领大家重 0 到 1 入门 React，会涉及到 React 背景和应用范围的介绍。 然后会介绍 React 的基础知识，包括 JSX 语法和 React 组件，Flux 模式介绍等。 
 
-1.1 [React 介绍](https://segmentfault.com/a/1190000005140569)
-1.2 [JSX 语法](https://segmentfault.com/a/1190000005145610)
-1.3 React 组件
-1.4 React 事件处理
-1.5 React 样式
-1.6 Flux 模式介绍
+- 1.1 [React 介绍](https://segmentfault.com/a/1190000005140569)
+- 1.2 [JSX 语法](https://segmentfault.com/a/1190000005145610)
+- 1.3 React 组件
+- 1.4 React 事件处理
+- 1.5 React 样式
+- 1.6 Flux 模式介绍
 
 ### 第二章：React 工程化 
 
