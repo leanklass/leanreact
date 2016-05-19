@@ -34,62 +34,109 @@ var todolist = {
     }]
 };
 
-/** 
- * todo list 组件 
+/**
+ * App 组件 
  */
-var TodoList = React.createClass({
-  render: function() {
-    // 计算还有多少个未完成的
-    var lefted = todolist.todos.reduce(function(acc, todo) {
-        return todo.completed ? acc : acc + 1;
-    }, 0);
-    return <div>
-            <header className="header">
-                <h1>{todolist.name}</h1>
+
+var App = React.createClass({
+    getInitialState: function() {
+        return {
+            todolist: todolist
+        }
+    },
+    render: function() {
+        var todolist = this.state.todolist;
+        // 计算还有多少个未完成的
+        var lefted = todolist.todos.reduce(function(acc, todo) {
+            return todo.completed ? acc : acc + 1;
+        }, 0);
+        return <div>
+                    <section className="main">
+                        <Header title={todolist.name}/>
+                        <TodoList todos={todolist.todos}/>
+                        <Footer lefted={lefted}/>
+                    </section>
+                </div>
+    }
+});
+
+
+/**
+ * Header 组件
+ */
+
+var Header = React.createClass({
+    render: function() {
+        return <header className="header">
+                <h1>{this.props.title}</h1>
                 <input className="new-todo" placeholder="What needs to be done?" value=""/>
             </header>
-            <section className="main">
-                <input className="toggle-all" type="checkbox"/>
-                <ul className="todo-list">
-                    {todolist.todos.map(function(todo, i) {
-                      var className = "";
-                      if (todo.completed) {
-                        className = "completed";
-                      }
-                      return <li className={className} key={i}>
-                                <div className="view">
-                                    <input className="toggle" type="checkbox" checked=""/>
-                                    <label> {todo.title} </label>
-                                    <button className="destroy"> </button>
-                                </div>
-                                <input tyoe="text" className="edit" value={todo.title} />
-                            </li>
-                    })}
-                </ul>
-            </section>
-            <footer className="footer">
-                <span className="todo-count">
-                    <strong> {lefted} </strong> <span> </span> <span> items </span> <span> left </span>
-                </span>
-                <ul className="filters">
-                    <li> <a href="#/" className="selected"> All </a> </li>
-                    <li> <a href="#/active" className=""> Active </a> </li> 
-                    <li> <a href="#/completed" className=""> Completed </a> </li>
-                </ul>
-                <button className="clear-completed">
-                    Clear completed
-                </button>
-            </footer>
-          </div>;
-  }
+    }
 });
+
+
+/**
+ * TodoList
+ */
+var TodoList = React.createClass({
+    render: function() {
+        return <ul className="todo-list">
+                {this.props.todos.map(function(todo, i) {
+                    return <TodoItem data={todo} key={i}/>
+                })}
+            </ul>
+    }
+});
+
+/**
+ * TodoItem
+ */
+var TodoItem = React.createClass({
+    render: function() {
+        var todo = this.props.data;
+        var className = "";
+        if (todo.completed) {
+            className = "completed";
+        }
+        return <li className={className}>
+                <div className="view">
+                    <input className="toggle" type="checkbox" checked=""/>
+                    <label> {todo.title} </label>
+                    <button className="destroy"> </button>
+                </div>
+                <input tyoe="text" className="edit" value={todo.title} />
+            </li>
+    }
+});
+
+/**
+ * Footer
+ */
+var Footer = React.createClass({
+    render: function() {
+        return <footer className="footer">
+            <span className="todo-count">
+                <strong> {this.props.lefted} </strong> <span> </span> <span> items </span> <span> left </span>
+            </span>
+            <ul className="filters">
+                <li> <a href="#/" className="selected"> All </a> </li>
+                <li> <a href="#/active" className=""> Active </a> </li> 
+                <li> <a href="#/completed" className=""> Completed </a> </li>
+            </ul>
+            <button className="clear-completed">
+                Clear completed
+            </button>
+        </footer>
+    }
+})
+ 
 
 /**
  * render 到 DOM
  * @type {String}
  */
 ReactDOM.render(
-  <TodoList name="World" />,
+  <App />,
   document.getElementById('AppRoot')
 );
 </script>
