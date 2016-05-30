@@ -3,7 +3,7 @@
 
 ![课程配图](./img/leanReact.png)
 
-**目前本书正在撰写过程中，将这个目录结构先发出来，希望能得到更多读者的反馈，有任何想法和意见可以回 issue**
+**目前本书正在撰写过程中，将这个目录结构先发出来，希望能得到更多读者的反馈，有兴趣的朋友可以回复订阅更新**
 
 ## 关于
 
@@ -17,7 +17,7 @@
 2. 没有系统性介绍 React ，某些部分只是蜻蜓点水
 3. 缺乏真实业务开发的实战介绍
 
-所以打算写一本电子关于 React 的电子书，也当做 React 教学课程， 这本书的特点是：
+所以打算写一本电子关于 React 的电子书，以及 React 教学课程， 这本书的特点是：
 
 1. 针对初级阶段的读者会系统性 step by step 的讲解 React 的基础知识
 2. 系统性的介绍 React 开发生态中的技术
@@ -30,26 +30,35 @@
 
 > The Best React Book For React Beginners And Professionals
 
+
 ## 本书内容
 
 这本书我会由简单到复杂的带领大家进入 React 的世界， 其中 1 - 3 章节都是 React 的基础知识，需要提醒读者的是大多数的基础知识都可以通过 React 的官方文档学习，如果对英语敏感的读者也可以看翻译。 对比官方文档本书 1 - 3 章会循序渐进的带领大家学习 React 基础知识，其中会有些自己的见解和领悟希望能让读者更容易理解学习，每个章节都会有一个实例作业，所以读者可以同时结合官方文档和本书进行学习。
 
 > 有 React 基础的读者可以跳过 1 - 3 章节 ， 后面的章节都是独立的，可以打乱顺序挑选阅读
 
+文章的样例代码都在放在 https://github.com/leanklass/leanreact/ 的不同分支上，可以直接 checkout 分支按照 README 的指示运行。
+
 ### 第一章：React 入门
 
 本章会带领大家重 0 到 1 入门 React，会涉及到 React 背景和应用范围的介绍。 然后会介绍 React 的基础知识，包括 JSX 语法和 React 组件，Flux 模式介绍等。 
 
-- 1.1 [React 介绍](https://segmentfault.com/a/1190000005140569)
-- 1.2 [JSX 语法](https://segmentfault.com/a/1190000005145610)
-- 1.3 React 组件
-- 1.4 React 事件处理
-- 1.5 React 样式
-- 1.6 Flux 模式介绍
+1.1 [React 介绍](https://segmentfault.com/a/1190000005140569)
+1.2 [JSX 语法](https://segmentfault.com/a/1190000005145610)
+1.3 [React 组件](https://segmentfault.com/a/1190000005151182)
+1.4 [React 组件生命周期和方法](https://segmentfault.com/a/1190000005161417)
+1.5 [React 与 DOM](https://segmentfault.com/a/1190000005182270)
+1.6 [Flux](https://segmentfault.com/a/1190000005348206)
 
 ### 第二章：React 工程化 
 
-现代化前端开发不仅仅是代码本身，会涉及到方方面面的前端开发知识。在真正开发代码之前，我们需要搭建包含 `gulp`、`webpack`、`babel es6 + jsx`、`livereload`、`less`、`jsminify`、`code watch` 这些功能的前端开发环境， 对于刚入门前端的读者来说可能会太复杂。 本章节会带领大家一一了解这些前端构建工具， 并最终搭建出包含这些功能的 React 开发环境。 
+前面一章我们已经熟悉了 React 的基础，能够掌握通过 JSX 和 React 的思维来完成业务应用，但是真正的前端项目构建不仅仅是业务代码本身，我们需要搭建一整套完整的前端开发流程，也就是前端工程化。在本章中将会讲解前端工程化相关的知识，并通过 gulp，webpack 等工具搭建出一套完整的 React 前端开发环境。
+
+2.1 [前端工程化概述](https://segmentfault.com/a/1190000005594760)
+2.2 Webpack 
+2.3 Gulp 
+2.4 构建 React 工程
+2.5 深入 Webpack
 
 ### 第三章：React 进阶
 
@@ -86,3 +95,6 @@ React 独特的地方在于， virtual dom 这种组件的组合模式可以应�
 ### 扩展：React 资源
 ### 扩展*: 各种 React 组件实现
 ### 扩展*：各种应用源码分析
+
+
+  [1]: /img/bVvIsW
