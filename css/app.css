@@ -376,3 +376,20 @@ html .clear-completed:active {
 		bottom: 10px;
 	}
 }
+
+.add-taskItem {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #04B10B;
+	width: 40px;
+	height: 32px;
+	margin: 16px 16px 16px 0;
+	border-radius: 6px;
+	cursor: pointer;
+	color: #fff;
+}
+
+.add-taskItem:hover{
+	background-color: #036F07;
+}
