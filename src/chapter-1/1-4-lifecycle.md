@@ -1,6 +1,6 @@
-
 > [书籍完整目录](https://segmentfault.com/a/1190000005136764)
-# 1.4 React 生命周期
+
+# 1.4 React 组件生命周期
 ![图片描述][1]
 > [官方文档](http://facebook.github.io/react/docs/component-specs.html)
 
@@ -116,8 +116,8 @@ var MyComponent = React.createClass({displayName: "MyComponent", });
 void componentWillMount()
 ```
 
-- **条件**：第一次渲染阶段在调用 render 方法前会被调用
-- **作用**：该方法在整个组件生命周期只会被调用一次，所以可以利用该方法做一些组件内部的初始化工作
+**条件**：第一次渲染阶段在调用 render 方法前会被调用
+**作用**：该方法在整个组件生命周期只会被调用一次，所以可以利用该方法做一些组件内部的初始化工作
 
 ## 1.4.7 componentDidMount
 
@@ -125,8 +125,8 @@ void componentWillMount()
 void componentDidMount()
 ```
 
-- **条件**：第一次渲染成功过后，组件对应的 DOM 已经添加到页面后调用
-- **作用**：这个阶段表示组件对应的 DOM 已经存在，我们可以在这个时候做一些依赖 DOM 的操作或者其他的一些如请求数据，和第三方库整合的操作。如果嵌套了子组件，子组件会比父组件优先渲染，所以这个时候可以获取子组件对应的 DOM。
+**条件**：第一次渲染成功过后，组件对应的 DOM 已经添加到页面后调用
+**作用**：这个阶段表示组件对应的 DOM 已经存在，我们可以在这个时候做一些依赖 DOM 的操作或者其他的一些如请求数据，和第三方库整合的操作。如果嵌套了子组件，子组件会比父组件优先渲染，所以这个时候可以获取子组件对应的 DOM。
 
 ### 1.4.8 componentWillReceiveProps(newProps)
 
@@ -136,8 +136,8 @@ void componentWillReceiveProps(
 )
 ```
 
-- **条件：** 当组件获取新属性的时候，第一次渲染不会调用
-- **用处：** 这个时候可以根据新的属性来修改组件状态 
+**条件：** 当组件获取新属性的时候，第一次渲染不会调用
+**用处：** 这个时候可以根据新的属性来修改组件状态 
 eg:
 ```javascript
     componentWillReceiveProps: function(nextProps) {
@@ -146,7 +146,7 @@ eg:
       });
     }
 ```
-- **注意：** 这个时候虽说是获取新属性，但并不能确定属性一定改变了，例如一个组件被多次渲染到 DOM 中，如下面：
+**注意：** 这个时候虽说是获取新属性，但并不能确定属性一定改变了，例如一个组件被多次渲染到 DOM 中，如下面：
 
 ```html
     var Component = React.createClass({
@@ -169,7 +169,7 @@ eg:
 
 > 参考 Facebook [(A=>B) => (B => A)](http://facebook.github.io/react/blog/2016/01/08/A-implies-B-does-not-imply-B-implies-A.html)
 
-## 1.4.9 componentWillUpdate(nextProps, nextState)
+## 1.4.9 shouldComponentUpdate(nextProps, nextState)
 
 ```javascript
 boolean shouldComponentUpdate(
@@ -177,8 +177,8 @@ boolean shouldComponentUpdate(
 )
 ```
 
-- **条件：** 接收到新属性或者新状态的时候在 render 前会被调用（除了调用 forceUpdate 和初始化渲染以外）
-- **用处：** 该方法让我们有机会决定是否重渲染组件，如果返回 false，那么不会重渲染组件，借此可以优化应用性能（在组件很多的情况）。
+**条件：** 接收到新属性或者新状态的时候在 render 前会被调用（除了调用 forceUpdate 和初始化渲染以外）
+**用处：** 该方法让我们有机会决定是否重渲染组件，如果返回 false，那么不会重渲染组件，借此可以优化应用性能（在组件很多的情况）。
 
 
 ## 1.4.10 componentWillUpdate
@@ -204,14 +204,19 @@ void componentDidUpdate(
 **条件**：更新被应用到 DOM 之后
 **用处**：可以执行组件更新过后的操作
 
-## 生命周期与单向数据流
+## 1.4.12 生命周期与单向数据流
 
 我们知道 React 的核心模式是单向数据流，这不仅仅是对于组件级别的模式，在组件内部 的生命周期中也是应该符合单向数据的模式。数据从组件的属性流入，再结合组件的状态，流入生命周期方法，直到渲染结束这都应该是一个单向的过程，其间不能随意改变组件的状态。 
 
+![图片描述][4]
 
 
+## 1.4.13 实例练习：通过 mixin 打印出组件生命周期的执行顺序
+
+@todo 
 
 
   [1]: /img/bVvOnw
   [2]: /img/bVvOd6
-  [3]: /img/bVvOk8
+  [3]: /img/bVwhwG
+  [4]: /img/bVvOSu

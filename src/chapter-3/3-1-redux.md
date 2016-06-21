@@ -465,8 +465,3 @@ redux 收到 action 过后，调用根 reducer 并返回最新的状态数据。
 ```js
 component.setState(newState)
 ```
-
-
-
-
-

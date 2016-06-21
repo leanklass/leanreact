@@ -1,4 +1,7 @@
+> [书籍完整目录](https://segmentfault.com/a/1190000005136764)
 # 2.1 前端工程化概述
+
+ ![图片描述][1]
 
 在前端开发的初始阶段，开发者通常只用关 html, css, javascript。但是现代化的前端开发已经不仅仅是业务代码本身，真正的前端开发环境涉及很多方面的需求，如：
 
@@ -201,3 +204,5 @@ Webpack 是支持 CommonJs 和 AMD 的模块编译工具，逐渐替代 Browseri
 1. Webpack + Babel 做 Javascript 预处理
 2. Gulp 做工作流 
 
+
+  [1]: /img/bVxDHn

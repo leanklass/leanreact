@@ -1,17 +1,21 @@
-# 2.5 深入 webpack 
+> [书籍完整目录](https://segmentfault.com/a/1190000005136764)
+
+![图片描述][1]
+
+# 2.5 webpack 进阶
 
 - 配置分离
 - code splitting  异步加载
 - 理解 webpack chunk  
 - webpack 调试
 
-## 配置分离
+## 2.5.1 配置分离
 
 在大型项目中，可能 webpack.config.js 会变得越来越臃肿，这个时候可以利用做 webpack-merge 插件。将配置定义在一个目录下面的不同文件中，然后通过 webpack-merge 来合并成最终的配置。
 
 > webpack-merge 详见 https://www.npmjs.com/package/webpack-merge
 
-## code splitting 异步加载
+## 2.5.2 code splitting 异步加载
 
 代码分割不仅仅是提取业务的公共代码，更应该关注的是实现代码的按需加载。 通过在模块中定义 split point ，webpack 会在打包的时候自动的分割代码块。定义 split point 的方式有两种
 
@@ -167,7 +171,7 @@ require(["module-a", "module-b"], function(a, b) {
 
 这时候的 require 实现是异步的方式，只有依赖的模块加载完成并执行回调，才会执行模块的 callback，依赖模块的回调结果会作为参数传入 a, b 中。
 
-## 代码块 Chunk 
+## 2.5.3 代码块 Chunk 
 
 ### Chunk 是什么？
 
@@ -276,7 +280,7 @@ require.ensure(dependencies, callBack, chunkName)
 
 在配置 webpack 的过程中，可以利用 webpack 提供的一些工具和参数来调试。
 
-### 名称行参数
+### 命令行参数
 
 通过调用
 
@@ -288,11 +292,16 @@ $ webpack [--params,...]
 2. `--json`:  可以将打包结果输出为 json 
 3. `--display-chunks`: 可以看到打包出来的 chunk 信息
 
-> 更多的参数见 
+> 更多的参数见 http://webpack.github.io/docs/cli.html#progress
 
 ### webpack analyse
 
 > analyse 地址：https://webpack.github.io/analyse/ 
 
-可以通过 analyse 网站分析 webpack 的编译结果
+可以通过 analyse 网站分析 webpack 的编译结果，如下图，可以分析 chunks, modules, Assets 等。
 
+![图片描述][2]
+
+
+  [1]: /img/bVxWgk
+  [2]: /img/bVxWcV

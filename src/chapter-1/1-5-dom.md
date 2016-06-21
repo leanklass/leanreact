@@ -1,4 +1,7 @@
-# 1.4 React 与 DOM 
+> [书籍完整目录](https://segmentfault.com/a/1190000005136764)
+# 1.5 React 与 DOM 
+
+![图片描述][1]
 
 在这一节中，主要的讨论范围为 React 与 DOM 相关的处理，包括：
 
@@ -9,7 +12,7 @@
 
 这节讲述过后，我们将会为 TODO 应用添加完整的事件响应，包括新增，删除，标记完成等。
 
-## 1.4.1 获取 DOM 元素
+## 1.5.1 获取 DOM 元素
 
 上一节我们已经讲过组件的生命周期，DOM 真正被添加到 HTML 中的 hook 为 
 
@@ -20,7 +23,7 @@
 
 ### findDOMNode()
 
-通过 ReactDOM 一共得 findDOMNode 方法， 传入参数我组件实例，eg
+通过 ReactDOM 提供的 findDOMNode 方法， 传入参数我组件实例，eg
 
 ```html
 var MyComponent = React.createClass({
@@ -59,7 +62,7 @@ var MyComponent = React.createClass({
 })
 ```
 
-## 1.4.2 DOM 事件 
+## 1.5.2 DOM 事件 
 
 > 官方事件文档 http://facebook.github.io/react/docs/events.html
 
@@ -267,7 +270,7 @@ UI 事件 {
 ```
 
 
-## 1.4.3 表单事件
+## 1.5.3 表单事件
 
 在 React 中比较特殊的事件是表单事件，大多数组件都是通过属性和状态来决定的，但是表单组件如 `input`, `select`, `option` 这些组件的状态用户可以修改，在 React 中会特殊处理这些组件的事件。
 
@@ -431,7 +434,7 @@ var CheckBox = React.createClass({
 3. 使用 click 事件
 
 
-## 1.4.4 style 属性
+## 1.5.4 style 属性
 
 在 React 中，可以直接设置 style 属性来控制样式，不过与 HTML 不同的是， 传入的 style 值为一个对象， 对象的所有 key 都是驼峰式命名，eg:
 
@@ -463,5 +466,8 @@ var divStyle = {
 在以前的前端开发方式是 样式结构和逻辑要分离， 而现在 React 中却有很多人推崇 inline 的样式。 在我看来因人而异，React 的这种模式也能做到样式模块化，样式重用（借用 Js 的特点）。并且因为 React 的实现方式，Inline 样式的性能甚至比 class 的方式高。
 
 
+## 1.5.5 实例练习：完整功能的 TODO 应用
 
+@todo
 
+  [1]: /img/bVvUtM

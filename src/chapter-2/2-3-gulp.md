@@ -1,6 +1,8 @@
 > [书籍完整目录](https://segmentfault.com/a/1190000005136764)
 # 2.3 Gulp
 
+![图片描述][1]
+
 在前端工程化中最重要的就是流程管理，借用 gulp 可以很方便的基于流的方式定义流程任务，并将任务串联起来，本节中将详细介绍 gulp ，包括：
 
 - gulp 介绍
@@ -11,7 +13,8 @@
 - gulp 配置和 API 使用
 - gulp 增量 build 
 
-## Gulp 介绍 
+
+## 2.3.1 Gulp 介绍 
 
 >  The streaming build system , Automate and enhance your workflow
 
@@ -46,7 +49,7 @@ Gulp 是一个基于 Node.js 的开源前端工作流构建工具，目前最新
     - less，sass 转换 (gulp-less ，gulp-sass)
     - css 自动添加前缀 (gulp-autoprefixer)
 9. js 相关
-    - jslint (gulp-eslint)
+    - jslint (gulo-eslint)
 10. html 转换
     - html 模板 (gulp-jade，gulp-ejs)
     - html prettify
@@ -151,7 +154,7 @@ gulp.task('build', build);
 gulp.task('default', build);
 ```
 
-## Gulp 安装
+## 2.3.2 Gulp 安装
 
 ```shell
 $ cd your-project
@@ -170,7 +173,7 @@ $ gulp -v
 [10:48:35] Local version 4.0.0-alpha.2
 ```
 
-## Gulp 配置
+## 2.3.3 Gulp 配置与 API
 
 ### 任务定义
 
@@ -493,7 +496,7 @@ watcher.on('unlink', function(path) {
 });
 ```
 
-## gulp 增量 build  
+## 2.3.4 gulp 增量 build  
 
 每次执行构建任务的时候，为了减少构建时间，可以采用增量构建的方式，在 Gulp 中，可以利用一些插件过滤 stream，找出其中修改过的文件。
 
@@ -530,4 +533,4 @@ function scripts() {
 ```
 
 
-
+  [1]: /img/bVxOv6

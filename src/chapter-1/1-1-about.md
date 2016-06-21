@@ -1,11 +1,14 @@
+> [书籍完整目录](https://segmentfault.com/a/1190000005136764)
 # 1.1 React 介绍
-
+![图片描述][1]
 ## 1.1.1 React 是什么
 
 > React IS A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES 
 > 来自：[React 官方网站](http://facebook.github.io/react/)
 
 狭义来讲 React 是 Facebook 内部开源出来的一个前端 UI 开发框架，广义来讲 React 不仅仅是 js 框架本身，更是一套完整的前端开发生态体系，这套体系包括：
+
+
 
 1. React.js
 2. ReactRenders: ReactDOM / ReactServer / ReactCanvas
@@ -14,7 +17,7 @@
 5. React Native 
 6. GraphQl + Relay 
 
-@todo ![React 生态体系配图]()
+
 
 任何技术都是一样，技术本身的核心不会太复杂，但是围绕这个主体会有很多依附的知识点形成了体系化的技术栈。 所以我们谈学习 React 并不仅仅是学习 React 本身，而是学习这套开发体系，整个技术栈， 本书也是围绕这个技术栈系统的讲解。 
 
@@ -64,7 +67,7 @@ React 应用的核心设计模式，数据流向自顶向下
             return <div>Hello {this.props.name}</div>;
           }
         });
-        
+
         ReactDOM.render(
           <Hello name="World" />,
           document.getElementById('example')
@@ -101,13 +104,14 @@ React 应用的核心设计模式，数据流向自顶向下
 
 ### 1.1.4.1 组件的组合模式 
 
-@todo ![react 组件组合模式配图]()
-
 > 组合模式：组合模式有时候又叫做部分-整体模式，它使我们树型结构的问题中，模糊了简单元素和复杂元素的概念，客户程序可以向处理简单元素一样来处理复杂元素,从而使得客户程序与复杂元素的内部结构解耦。  
-
-@todo ![组合模式配图]()
+![图片描述][2]
 
 React 就是基于组合模式， 无论是应用等级还是一个表单亦或是一个按钮都视为一个组件， 然后基于组件的组合构建整个应用，这样的结构一直是前端界想要却迟迟不来的 web component。 
+
+React 中组件的组合：
+
+![图片描述][3]
 
 基于组合模式的优点：
 
@@ -119,20 +123,18 @@ React 就是基于组合模式， 无论是应用等级还是一个表单亦或�
 
 ### 1.1.4.2 单向数据流的设计 
 
-@todo ![单向数据流图]()
-
 我们都知道 Javascript 是脚本语言，不能像静态语言一样通过编译定位为题，想要清晰的定位到应用中的 bug 需要深入了解业务代码，对于大型前端应用来说，因为业务代码量很大且复杂，很难定位到 bug。 然而 React 的单向数据流的设计让前端 bug 定位变得简单， 页面的 UI 和数据的对应是唯一的,我们可以通过定位数据变化就可以定位页面展现问题。 
 
-@todo ![json-页面组件数据对应图]()
+单向数据流设计：
+
+![图片描述][4]
 
 ### 1.1.4.3 高效的性能 
 
-@todo ![virtual dom 算法]()
-这里要提一个概念， 可能你已经了解或听说了，就是 virtual dom。 React 之所以能够这样设计要归功于 Virtual DOM 算法， 只有需要改变的元素才会重渲染。
+这里要提一个概念， 可能你已经了解或听说了，就是 virtual dom。 React 之所以能够这样设计要归功于 Virtual DOM 算法， 基于算法可以让只有需要改变的元素才去重渲染。在后面的内部实现章节中会详细讲解 virtual DOM 算法的实现
 
 ### 1.1.4.4 分离的框架设计 
 
-@todo ![分离设计]()
 
 React.js 现在的版本已经将源码分开为 ReactDOM 和 React.js . 这就意味着 React 不仅仅能够在 web 端工作， 甚至可以在服务端（nodejs），Native 端运行。 
 
@@ -142,25 +144,28 @@ React.js 现在的版本已经将源码分开为 ReactDOM 和 React.js . 这就�
 
 React 可应用的范围：
 
+![图片描述][5]
+
 1. web 端应用
-2. 原生应用
-3. 服务端渲染
+2. 原生应用 - IOS、Android、Native 应用
+3. Node.Js 服务端渲染
 
 ### 1.1.5.1 Web 端应用 
 
 Web 应用是 React 的出发点，我们可以通过 React 构建从简单的 TODOAPP 到大型的电商购物网站应用。 同时除了能够处理 HTML 以外， 在 Web 端， 我们同样可以通过 React 来实现数据可视化， 图表展现，甚至是游戏开发：
 
-@todo ![各种应用配图]()
 
 ### 1.1.5.2 原生应用 
 
-除了 Web 端以外，我们可以使用同样的 jsx 语法构建 IOS 或者 Android 应用， 这要归功于 facebook 开源的 React Native。 基于 React Native ， 我们将可以使用 jsx 来实现具有原生应用性能的 UI 运行于 IOS 和 android 中。
-
-@todo ![React Native 原生应用配图]()
+除了 Web 端以外，我们可以使用同样的 jsx 语法构建 IOS 或者 Android 应用， 这要归功于 facebook 开源的 React Native。 基于 React Native ， 我们将可以使用 jsx 来实现具有原生应用性能的 UI 运行于 IOS 和 android 中，同时我们也可以通过 NW.js 或者 Electron 来实现基于 React 的桌面应用。
 
 ### 1.1.5.3 服务端渲染
 
 React 除了在 Web 和 Native 环境以外， 也可以通过 React 实现在服务器端渲染出 HTML。
 
-@todo ![server 配图]()
 
+  [1]: /img/bVvJgS
+  [2]: /img/bVvJhV
+  [3]: /img/bVvJk2
+  [4]: /img/bVvJr6
+  [5]: /img/bVvJXr

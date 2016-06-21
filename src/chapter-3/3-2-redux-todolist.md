@@ -1,6 +1,13 @@
 > [书籍完整目录](https://segmentfault.com/a/1190000005136764)
 
-# 3.2 Redux todolist
+# 3.2 Redux TodoApp
+
+
+
+![clipboard.png](/img/bVykcv)
+
+
+
 
 上一节讲完了 redux 中的概念，但是仍然没有和 react 联系起来，这一节
 将利用 redux 在 react 中实现完整的 todolist：

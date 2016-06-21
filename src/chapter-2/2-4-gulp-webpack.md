@@ -147,7 +147,7 @@ $ npm install babel-loader babel-preset-es2015 babel-preset-stage-0 babel-preset
 ```shell
 $ npm install gulpjs/gulp-cli -g
 $ npm install gulpjs/gulp.git#4.0 --save-dev
-$ npm install gulp gulp-util del gulp-rename gulp-less gulp-connect connect-rest@1.9.5  --save-dev
+$ npm install gulp-util del gulp-rename gulp-less gulp-connect connect-rest@1.9.5  --save-dev
 ```
 
 ## 2.4.4 创建 gulpfile.js

@@ -439,13 +439,15 @@ index.js   700 kB       1  [emitted]  index
 > Loaders are transformations that are applied on a resource file of your app.
 > (Loaders 是应用中源码文件的编译转换器)
 
-![图片描述][5]
+
+![clipboard.png](/img/bVydVK)
+
 
 也就是说在 webpack 中，通过 loader 可以实现 JSX 、Es6、CoffeeScript 等的转换，
 
 ### loader 功能
 
-1. loader 管道：在同一种类型的源文件上，可以同时执行多个 loader ， loader 的执行方式可以类似管道的方式。
+1. loader 管道：在同一种类型的源文件上，可以同时执行多个 loader ， loader 的执行方式可以类似管道的方式，管道执行的方向为从右到左。
 2. loader 可以支持同步和异步
 3. loader 可以接收配置参数
 4. loader 可以通过正则表达式或者文件后缀指定特定类型的源文件

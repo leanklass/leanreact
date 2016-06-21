@@ -9,8 +9,8 @@
 - Flux 介绍
 - MVC 架构之痛
 - Flux 的理解 
-- Flux 与 React 的结合
 - Flux 相关库和工具介绍
+- Flux 与 React 实例
 
 最后我们将会把之前的 TODOMVC 改为 Flux 的架构。
 
@@ -22,25 +22,27 @@
 
 在详细介绍 Flux 之前，我们先来看看传统的前端 MVC 架构以及其带来的问题。
 
+> MVC 的实现可能有很多种方式，比较灵活，但基本本质不会改变，只是三者间的数据传递方向可能会改变，即便是 MVP 模式也只是 MVC 的变种，所以为了统一我们且以下图的 MVC 方式来讨论。
+
 ![图片描述][2]
 
 ### 概念
 
 - **Model：** 负责保存应用数据，和后端交互同步应用数据
-- **View：** 页面 HTML DOM 
+- **View：** 负责渲染页面 HTML DOM 
 - **Controller：** 负责连接 View 和 Model ， Model 的任何改变会应用到 View 中，View 的操作会通过 Controller 应用到 Model 中
+- **关系**：Model, View, Controller 都是多对多关系。
 
 ### 流程
 
 以 TODOMVC 为例子用户添加一个 todo 的交互流程：
 
-`View -> Action -> Controller -> Model -> Controller -> View`
+`View -> Action -> Controller -> Model -> View`
 
 1. **View -> Action:** 添加按钮事件或者 input 输入的提交事件
 2. **Action -> Controller:** 控制器响应 View 事件
 3. **Controller -> Model:** 控制器依赖 Model, 调用 Model 添加 todo 
-4. **Model -> Controller:** 控制器监听 Model 添加 todo 事件 
-5. **Controller -> View:** 控制器在 View 中添加一个新的 Todo 视图
+4. **Model -> View:** View 监听 Model 的改变添加 todo 事件，在 HTML 中添加一个新的 Todo 视图
 
 ### 问题
 
@@ -51,7 +53,7 @@
 
 ### 如何解决
  
-如果渲染函数只有一个，统一放在 App 控制器中，每次更新**重绘制**页面，这样的话：
+如果渲染函数只有一个，统一放在 App 控制器中，每次更新**重渲染**页面，这样的话：
 
 1. 任何数据的更新都只用调用重渲染就行
 2. 数据和当前页面的状态是唯一确定的
@@ -69,7 +71,6 @@
 
 简单来说在 Flux 架构中直接剥离了控制器层，`MVC` 架构变成了 `MV + Flux` 架构。
 
-
 ### 概念
 
 **单向数据流** 
@@ -80,23 +81,35 @@
 
 **Action** 
 
+![图片描述][4]
 
+Action 可以理解为对应用数据修改的指令，任何修改应用数据的行为都必须需通过触发 action 来修改。Action 可以来自于 View，也可以来自服务端的数据更新。
 
-任何修改应用数据的行为都需通过触发 action 来修改，数据的不同控制行为对应不同的 action，
-Action  可以来自 View 触发，也可以来自服务端的数据更新触发。
+**Action Creator**：
 
+![图片描述][5]
 
-**Action Creator**：Action 创建者 
+为了抽象 Action ，提供一些辅助的语义化的方法来创建 Action，这些辅助方法叫做 Action Creator。 
 
 **Stores**
 
+![图片描述][6]
+
 应用的数据中心，所有应用数据都存放在这里控制，同时包含数据的控制行为，可能包含多个 store
 
+**Dispatcher** 
 
-- **Dispatcher：** action 的控制者，所有 action 都会通过 dispatcher，由 dispatcher 控制 action 是否应该传入到 store 中，Dispatcher 是一个单例。
-- **View:** 页面的视图，对应 React 的 Component, 视图可以触发 action 到 dispatcher。
-- **Controller View:** 控制器 View 可以知晓 store 数据，把 store 数据转化为自身的状态，在将数据传递给其他 view 。 并且可以监听 store 数据的改变，当 store 数据改变过后重新设置状态触发重渲染。
+![图片描述][7]
 
+action 的控制者，所有 action 都会通过 dispatcher，由 dispatcher 控制 action 是否应该传入到 store 中，Dispatcher 是一个单例。
+
+**View** 
+
+![图片描述][8]
+
+页面的视图，对应 React 的 Component, 视图可以触发 action 到 dispatcher。
+
+需要区别出一种叫控制器 View（Controller View）的类型，这种 View 可以知晓 store 数据，把 store 数据转化为自身的状态，在将数据传递给其他 view 。 并且可以监听 store 数据的改变，当 store 数据改变过后重新设置状态触发重渲染。 可以将控制器 View 对应 MVC 中的控制器，但是差别很大，控制器 View 唯一多做的事情就是监听 store 数据改变，没有其他任何业务处理逻辑。
 
 ### 流程
 
@@ -186,16 +199,28 @@ function notPure(b, c) {
 1. 无耦合，可移植性强: 组件可重用性高
 2. 可测试性高：组件无依赖，可以很容易的单独测试组件
 
-## React 与 Flux
+## 1.6.5 Flux 生态
 
-### 组件之间的通信
-### 组件作用域问题 
+上面已经讲过 Flux 更应该算是 Facebook 提出的一种前端架构模式，而根据这种理念的 Flux 实现有很多，以下是 github star 数较高的一些实现：
 
-## Flux 生态
+1. [Facebook 官方实现](https://github.com/facebook/flux)
+2. [Redux](http://redux.js.org/) 目前认可度最高的实现
+3. [refluxjs](https://github.com/reflux/refluxjs)
+4. [alt](https://github.com/goatslacker/alt)
+5. [fluxxor](http://fluxxor.com/) 
 
-## 实例：用 Flux 重构 TODOMVC 应用 
+后面我们会在第四章中专门讲解 Redux 与 React 的应用。
+
+## 1.6.6 Flux 与 React 实例
+
+@todo  
 
 
   [1]: /img/bVwBD2
-  [2]: /img/bVwBD3
+  [2]: /img/bVwCjE
   [3]: /img/bVwBoo
+  [4]: /img/bVwBZs
+  [5]: /img/bVwB0R
+  [6]: /img/bVwB3b
+  [7]: /img/bVwB3B
+  [8]: /img/bVwB3L
