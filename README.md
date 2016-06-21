@@ -39,34 +39,43 @@
 
 文章的样例代码都在放在 https://github.com/leanklass/leanreact/ 的不同分支上，可以直接 checkout 分支按照 README 的指示运行。
 
+
+
 ### 第一章：React 入门
 
 本章会带领大家重 0 到 1 入门 React，会涉及到 React 背景和应用范围的介绍。 然后会介绍 React 的基础知识，包括 JSX 语法和 React 组件，Flux 模式介绍等。 
 
-1.1 [React 介绍](https://segmentfault.com/a/1190000005140569)
-1.2 [JSX 语法](https://segmentfault.com/a/1190000005145610)
-1.3 [React 组件](https://segmentfault.com/a/1190000005151182)
-1.4 [React 组件生命周期和方法](https://segmentfault.com/a/1190000005161417)
-1.5 [React 与 DOM](https://segmentfault.com/a/1190000005182270)
-1.6 [Flux](https://segmentfault.com/a/1190000005348206)
+- 1.1 [React 介绍](https://segmentfault.com/a/1190000005140569)
+- 1.2 [JSX 语法](https://segmentfault.com/a/1190000005145610)
+- 1.3 [React 组件](https://segmentfault.com/a/1190000005151182)
+- 1.4 [React 组件生命周期和方法](https://segmentfault.com/a/1190000005161417)
+- 1.5 [React 与 DOM](https://segmentfault.com/a/1190000005182270)
+- 1.6 [Flux](https://segmentfault.com/a/1190000005348206)
 
 ### 第二章：React 工程化 
 
 前面一章我们已经熟悉了 React 的基础，能够掌握通过 JSX 和 React 的思维来完成业务应用，但是真正的前端项目构建不仅仅是业务代码本身，我们需要搭建一整套完整的前端开发流程，也就是前端工程化。在本章中将会讲解前端工程化相关的知识，并通过 gulp，webpack 等工具搭建出一套完整的 React 前端开发环境。
 
-2.1 [前端工程化概述](https://segmentfault.com/a/1190000005594760)
-2.2 Webpack 
-2.3 Gulp 
-2.4 构建 React 工程
-2.5 深入 Webpack
+- 2.1 [前端工程化概述](https://segmentfault.com/a/1190000005594760)
+- 2.2 [Webpack](https://segmentfault.com/a/1190000005612506)
+- 2.3 [Gulp](https://segmentfault.com/a/1190000005636680)
+- 2.4 [webpack + gulp 构建完整前端工作流](https://segmentfault.com/a/1190000005657651)
+- 2.5 [Webpack 进阶](https://segmentfault.com/a/1190000005666159)
 
-### 第三章：React 进阶
-
-React 本身只有极少的 API，但深入了解这些 API 会对我们的开发大有裨益，本章会带领大家深入的了解 React 的一些核心操作，包括事件处理，生命周期，动画。 以及会详细介绍 Flux 模式 和 Immutable Js。
-
-### 第四章：React 与 Redux
+### 第三章：React 与 Redux
 
 Redux 是目前 flux 模式最流行的实现，本章节会带领大家了解 Redux 的设计概念， 阅读 Redux 的源码，以及通过实例应用讲解 Redux + React 的开发模式。
+
+- 3.1 [redux 介绍](https://segmentfault.com/a/1190000005696767)
+- 3.2 [react-redux todoApp](https://segmentfault.com/a/1190000005758244)
+- 3.3 [理解 redux 中间件](https://segmentfault.com/a/1190000005766289)
+- 3.4 redux 异步
+- 3.5 redux 源码
+
+
+### 第四章：React 进阶
+
+React 本身只有极少的 API，但深入了解这些 API 会对我们的开发大有裨益，本章会带领大家深入的了解 React 的一些核心操作，包括事件处理，生命周期，动画。 以及会详细介绍 Flux 模式 和 Immutable Js。
 
 ### 第五章：React 实战业务开发 
 
