@@ -545,5 +545,4 @@ redux-saga 基于 Generator 有很多高级的特性， 如：
 > 因篇幅有限，这部分内容在下一篇讲解 
 
 
-
-  [1]: /img/bVyopV
+  [1]: /img/bVyou8

@@ -39,8 +39,8 @@ Redux 是目前 flux 模式最流行的实现，本章节会带领大家了解 R
 - 3.1 [redux 介绍](https://segmentfault.com/a/1190000005696767)
 - 3.2 [react-redux todoApp](https://segmentfault.com/a/1190000005758244)
 - 3.3 [理解 redux 中间件](https://segmentfault.com/a/1190000005766289)
-- 3.4 redux 异步
-- 3.5 redux 源码
+- 3.4 [掌控 redux 异步](https://segmentfault.com/a/1190000005773725)
+- 3.5 [compose redux sagas](https://segmentfault.com/a/1190000005776381)
 
 
 ### 第四章：React 进阶
