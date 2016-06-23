@@ -2,6 +2,10 @@
 
 # 3.5 compose redux sages
 
+
+![clipboard.png](/img/bVyoVa)
+
+
 基于 redux-thunk 的实现特性，可以做到基于 promise 和递归的组合编排，而 redux-saga 提供了更容易的更高级的组合编排方式（当然这一切要归功于 Generator 特性），这一节的主要内容为：
 
 1. 基于 take Effect 实现更自由的任务编排
@@ -10,7 +14,7 @@
 4. saga 组合 yield* saga
 5. channels
 
-## 基于 take Effect 实现更自由的任务编排
+## 3.5.1 基于 take Effect 实现更自由的任务编排
 
 前面我们使用过 takeEvery helper, 其实底层是通过 take effect 来实现的。通过 take effect 可以实现很多有趣的简洁的控制。
 
@@ -81,7 +85,7 @@ function* loginFlow() {
 take 最不可思议的地方就是，将 **异步的任务用同步的方式来编排** ，使用好 take 能极大的简化交互逻辑处理
 
 
-## fork 和 cancel 实现非阻塞任务
+## 3.5.2 fork 和 cancel 实现非阻塞任务
 
 在提非阻塞之前肯定要先要说明什么叫阻塞的代码。我们看一下下面的例子：
 
@@ -219,7 +223,7 @@ function* authorize(user, password) {
 ```
 
 
-##  Parallel 和 Race 任务 
+##  3.5.3 Parallel 和 Race 任务 
 
 ### Parallel
 基于 generator 的特性，下面的代码会按照顺序执行
@@ -263,7 +267,7 @@ function* fetchPostsWithTimeout() {
 
 这里默认使用到了 race 的一个特性，如果某一个任务成功了过后，其他任务都会被 cancel 。
 
-## yield* 组合 saga
+## 3.5.4 yield* 组合 saga
 
 yield* 是 generator 的内关键字，使用的场景是 yield 一个 generaor。
 
@@ -285,7 +289,7 @@ function* game() {
 ```
 
 
-## channels 
+## 3.5.5 channels 
 
 ### 通过 actionChannel 实现缓存区 
 
@@ -425,5 +429,4 @@ function* handleRequest(chan) {
 
 - http://yelouafi.github.io/redux-saga/docs/advanced/index.html
 - http://gajus.com/blog/2/the-definitive-guide-to-the-javascript-generators#understanding-the-execution-flow
-
 
