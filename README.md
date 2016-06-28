@@ -72,7 +72,7 @@ React 除了可以在浏览器端渲染以外， 还可以在服务器端渲染 
 
 ### 第九章：React 自定义 Renderer
 
-React 独特的地方在于， virtual dom 这种组件的组合模式可以应用于很多地方， 除了 ReactDOM 渲染器实现外，我们可以实现一个自己的渲染器， 比如 D3 渲染器， PIXI.JS 渲染器， Three.js 渲染器。 
+React 独特的地方在于， virtual dom 这种组件的组合模式可以应用于很多地方， 除了 ReactDOM 渲染器实现外，我们可以实现一个自己的渲染器， 比如 D3 渲染器， PIXI.JS 渲染器， Three.js 渲染器。
 
 ### 扩展：React 资源
 ### 扩展*: 各种 React 组件实现
