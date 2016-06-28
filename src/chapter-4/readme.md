@@ -2,6 +2,7 @@
 
 我们已经能基于 React 实现基本的交互逻辑，但是在使用 React 的过程中还是可能会有些不确定的地方或者一些特殊的功能不知道怎么实现，可能会问 React 中有没有一些 Best practices 或者 Good Pattern 可以参考的，本章会在各个维度介绍之前没有讲过的 React 特性。
 
+- react 代码规范
 - react patterns 
 - react magics and tricks
     - dangerouslySetInnerHTML

@@ -1,38 +1,21 @@
-# react patterns
+# react 代码规范
 
 - 关于
-- 代码组织
-    - 组件定义
-    - render jsx 
-    - 命名
-- patterns
-    - 单向性和确定性
-        - 修改 Props 
-        - 在 getInitialState 中使用 props 
-        - 在 componentWillMount 使用 setState
-        - render with side effects （破坏一致性原则，尽量保证纯函数）
-        - private states and global events （global Event 增加组件的耦合, private state 影响组件的确定性）
-        - mutate dom explicitly via Jquery (和 React 的dom冲突 )
-    - 内存管理
-        - componentDidMount + componentWillUnmount
-        - 不要判断 isMounted
-    - 上层设计
-        - 使用 container component
-        - 使用 mixins （Composition instead of mixins）https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.le8yopk2n
-
+- 组件定义
+- render jsx 
+- 命名
 
 ## 关于
 
 在代码的设计上，每个团队可能都有一定的代码规范和模式，好的代码规范能够提高代码的可读性便于协作沟通，好的模式能够上层设计上避免不必要的 bug 出现。本节会参考社区提供一些 React 的规范和优秀的设计模式。
 
-## 代码组织
 
-### 基础规范
+## 基础规范
 
 1. 统一全部采用 Es6
 2. 组件文件名称采用大驼峰命名
 
-### 组件结构定义
+## 组件结构定义
 
 **总体规则：** stateless(Function) 优先于 Es6 Class 优先于 React.createClass；
 **书写规则：** 规范组件内部方法的定义顺序
@@ -104,7 +87,7 @@ Person.defaultProps = defaultProps;
 Person.propTypes = propTypes;
 ```
 
-### 命名规范 
+## 命名规范 
 
 - 组件名称：大驼峰
 - 属性名称：小驼峰
@@ -113,7 +96,7 @@ Person.propTypes = propTypes;
 - key: 不能使用数组 index ，构造或使用唯一的 id
 - 组件方法名称：避免使用下划线开头的命名
 
-### jsx 书写规范 
+## jsx 书写规范 
 
 - 自闭合
 ```
@@ -165,18 +148,9 @@ render() {
 }
 ```
 
-### eslint-react 
+## eslint-react 
 
 规范可以使用 eslint-react 插件来强制实施
 
 > 更多 react 代码规范可参考 https://github.com/airbnb/javascript/tree/master/react
-
-## patterns 
-
-
-## 参考
-
-- https://github.com/airbnb/javascript/tree/master/react
-- https://github.com/planningcenter/react-patterns#cached-state-in-render
-- https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.le8yopk2n
 
