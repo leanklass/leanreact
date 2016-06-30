@@ -23,7 +23,7 @@
     - 克隆组件
 - 性能管理
     - 测试工具集
-    - PureRenderMixin
+    - PureRenderMixin PureComponent
     - render 的时候创建了新对象  [] , {}, Function 等
     - https://medium.com/@esamatti/react-js-pure-render-performance-anti-pattern-fb88c101332f#.vru8s8e32
     - shouldComponentUpdate
