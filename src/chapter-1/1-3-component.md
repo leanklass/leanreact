@@ -129,7 +129,7 @@ eg:
                     </label>
         },
         // 通过 setState 修改组件状态
-        // setState 过后会 React 会调用 render 方法重渲染 input 组件状态
+        // setState 过后会 React 会调用 render 方法重渲染
         toggleSwitch: function() {
             var open = this.state.open;
             this.setState({
@@ -159,7 +159,7 @@ eg:
         render: function() {
             var props = this.props;
             return <div className="todo-item">
-                        <span class="todo-item__name">{props.name}</span>
+                        <span className="todo-item__name">{props.name}</span>
                     </div>
         }
     });

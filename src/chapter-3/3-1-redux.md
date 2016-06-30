@@ -300,7 +300,7 @@ function reducer(previewsState, action) {
 }
 ```
 
-首先 render 是一个纯函数，接收到之前的应用状态和 action 并返回一个新状态，为了每次返回一个新状态，可以通过 Object.assign() 方法返回一个新的对象，也可以使用 Immutable.js （后面的章节会讲解 Immutable.js)。
+首先 reducer 是一个纯函数，接收到之前的应用状态和 action 并返回一个新状态，为了每次返回一个新状态，可以通过 Object.assign() 方法返回一个新的对象，也可以使用 Immutable.js （后面的章节会讲解 Immutable.js)。
 
 ```js
 function todoApp(state, action) {

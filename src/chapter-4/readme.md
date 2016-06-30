@@ -19,8 +19,6 @@
 - 不可变数据
     - Immutability Helpers
     - immutable.js
-- 高阶组件 
-    - 克隆组件
 - 性能管理
     - 测试工具集
     - PureRenderMixin PureComponent
